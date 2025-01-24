@@ -13,25 +13,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
     />
     <title>Movie Design</title>
-
-    <script>
-      // Check if the user is authenticated
-      if (!localStorage.getItem('isLoggedIn')) {
-        // Redirect to the login page
-        window.location.href = 'login.html';
-      }
-    </script>
-    <script>
-      document.getElementById('logout-button').addEventListener('click', () => {
-        // Clear login state
-        localStorage.removeItem('isLoggedIn');
-        // Redirect to login page
-        window.location.href = 'login.html';
-      });
-    </script>
   </head>
-
-  <button id="logout-button">Logout</button>
 
   <body>
     <div class="navbar">
