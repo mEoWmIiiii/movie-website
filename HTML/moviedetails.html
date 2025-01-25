@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/CSS/MovieDetails.css" />
+    <title>Movie Details</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fas fa-film"></i>
+        <span>Movie Booking</span>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search Movies" />
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </div>
+      <div class="nav-buttons">
+        <button class="sign-up">Sign Up</button>
+        <button class="sign-in">Sign In</button>
+      </div>
+    </nav>
+
+    <div class="movie-container">
+      <div class="movie-poster-container">
+        <img src="/img/1.jpeg" alt="Movie Poster" id="moviePoster" />
+      </div>
+      <div class="movie-details">
+        <h1 id="movieTitle">While You Were Sleeping</h1>
+        <div class="movie-info">
+          <div class="synopsis">
+            <h2>Synopsis</h2>
+            <p id="movieSynopsis">
+              Lonely transit worker Lucy Eleanor Moderatz (Sandra Bullock) pulls
+              her longtime crush, Peter (Peter Gallagher), from the path of an
+              oncoming train. At the hospital, doctors report that he's in a
+              coma, and a misplaced comment from Lucy causes Peter's family to
+              assume that she is his fiancée. When Lucy doesn't correct them,
+              they take her into their home and confidence. Things get even more
+              complicated when she finds herself falling for Peter's sheepish
+              brother, Jack (Bill Pullman).
+            </p>
+          </div>
+          <div class="additional-info">
+            <p>
+              <strong>Duration:</strong> <span id="duration">1h 43min</span>
+            </p>
+            <p>
+              <strong>Genre:</strong>
+              <span id="genre">Romance, Comedy, Drama</span>
+            </p>
+            <p>
+              <strong>Starring:</strong>
+              <span id="releaseDate"
+                >Sandra Bullock, Bill Pullman, Peter Gallagher
+              </span>
+            </p>
+            <p>
+              <strong>Director:</strong>
+              <span id="director">Jon Turteltaub</span>
+            </p>
+          </div>
+          <div class="rating">
+            <span class="heart-icon">❤️ 4.8 </span>
+            <span id="movieRating" class="rating-value"></span>
+          </div>
+          <button class="book-seats" onclick="location.href='seats.html'">
+            Book Seats
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/JS/movieDetails.js"></script>
+  </body>
+</html>

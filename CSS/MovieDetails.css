@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+  color: white;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #000000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 40%;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+}
+
+.search-bar button {
+  padding: 0.5rem 1rem;
+  background: #dc3545;
+  border: none;
+  color: white;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-buttons button {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sign-up {
+  background-color: #dc3545;
+  color: white;
+}
+
+.sign-in {
+  background-color: #6c757d;
+  color: white;
+}
+
+.movie-container {
+  display: flex;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.movie-poster {
+  flex: 0 0 300px;
+}
+
+.movie-poster img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.movie-details {
+  flex: 1;
+  background-color: #2a2a2a;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.movie-details h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.synopsis {
+  margin-bottom: 2rem;
+}
+
+.synopsis h2 {
+  color: #ff4444;
+  margin-bottom: 1rem;
+}
+
+.synopsis p {
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+.additional-info p {
+  margin-bottom: 0.5rem;
+  color: #cccccc;
+}
+
+.additional-info strong {
+  color: white;
+}
+
+.book-seats {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+}
+
+.book-seats:hover {
+  background-color: #ff6666;
+}
+
+.movie-details-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.close-button:hover {
+  opacity: 0.8;
+}
+
+.user-profile {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.movie-details-container {
+  height: calc(100vh - 70px);
+}
+
+.movie-backdrop {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.content-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 4rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  color: white;
+}
+
+.movie-info h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.genre-pill {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.runtime-date {
+  margin: 1rem 0;
+  opacity: 0.8;
+}
+
+.description {
+  max-width: 60%;
+  line-height: 1.6;
+  margin: 1.5rem 0;
+}
+
+.rating {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.action-buttons button {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 5px;
+  margin-right: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.watch-trailer {
+  background: #dc3545;
+  color: white;
+}
+
+.book-now {
+  background: #6c31ff;
+  color: white;
+}
