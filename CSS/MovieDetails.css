@@ -81,7 +81,10 @@ body {
 }
 
 .movie-poster {
-  flex: 0 0 300px;
+  width: 450px;
+  height: 655px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .movie-poster img {
