@@ -1,9 +1,9 @@
-* {
+/* * {
   margin: 0;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .navbar {
@@ -20,7 +20,7 @@ body {
   padding: 0 50px;
   height: 100%;
   color: white;
-  font-family: "Sen", sans-serif;
+  font-family: 'Sen', sans-serif;
 }
 
 .logo-container {
@@ -250,25 +250,25 @@ body {
   color: black;
 }
 
-.sidebar.active{
-    background-color: white;
+.sidebar.active {
+  background-color: white;
 }
 
-.left-menu-icon.active{
-    color: black;
+.left-menu-icon.active {
+  color: black;
 }
 
-.toggle.active{
-    background-color: black;
+.toggle.active {
+  background-color: black;
 }
 
-.toggle-ball.active{
-    background-color: white;
-    transform: translateX(-20px);
+.toggle-ball.active {
+  background-color: white;
+  transform: translateX(-20px);
 }
 
-@media only screen and (max-width: 940px){
-    .menu-container{
-        display: none;
-    }
-}
+@media only screen and (max-width: 940px) {
+  .menu-container {
+    display: none;
+  }
+} */

@@ -1,3 +1,9 @@
+/* Import Attack on Titan font */
+@font-face {
+  font-family: 'AttackOnTitan';
+  src: url('../fonts/AttackOnTitan.ttf') format('truetype');
+  /* Make sure to adjust the path to where you store the font file */
+}
 * {
   margin: 0;
   padding: 0;
@@ -78,6 +84,13 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.7);
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .hero-title {
@@ -92,8 +105,10 @@
 
 .hero-title h1 {
   font-size: 3.5rem;
+  font-family: 'AttackOnTitan', Arial, sans-serif;
   letter-spacing: 0.2em;
   margin-bottom: 1rem;
+  text-transform: uppercase; /* Attack on Titan logo is typically all caps */
 }
 
 /* Movies Grid */

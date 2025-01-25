@@ -3,112 +3,89 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flakes Cinema</title>
+    <title>Movie Ticket Booking</title>
     <link rel="stylesheet" href="/CSS/seats.css" />
+    <script src="/JS/seats.js" defer></script>
   </head>
-  <body>
-    <header>
-      <h1>Flakes Cinema</h1>
-      <nav>
-        <a href="#">Home</a>
-      </nav>
-    </header>
 
-    <main>
-      <section id="now-showing">
-        <h2>Now Showing</h2>
-        <div class="movie-listing">
-          <div class="movie">
-            <div class="poster"></div>
-            <div class="details">
-              <h3>Avengers: Endgame</h3>
-              <p>The epic conclusion to the Infinity Saga</p>
-              <span class="price">$15.99</span>
-              <button class="book-now">Book Now</button>
+  <body>
+    <div class="main">
+      <div class="tickets">
+        <div class="ticket-selector">
+          <div class="title" id="movieTitle"></div>
+          <div class="seats">
+            <div class="status">
+              <div class="item">Available</div>
+              <div class="item">Booked</div>
+              <div class="item">Selected</div>
+            </div>
+            <div class="all-seats">
+              <input type="checkbox" name="tickets" id="s1" />
+              <label for="s1" class="seat booked"></label>
+            </div>
+          </div>
+          <div class="screentext">Screen</div>
+          <div class="timings">
+            <div class="dates">
+              <input type="radio" name="date" id="d1" checked />
+              <label for="d1" class="dates-item">
+                <div class="day">Fri</div>
+                <div class="date">12</div>
+              </label>
+              <input type="radio" name="date" id="d2" />
+              <label for="d2" class="dates-item">
+                <div class="day">Sat</div>
+                <div class="date">13</div>
+              </label>
+              <input type="radio" name="date" id="d3" />
+              <label for="d3" class="dates-item">
+                <div class="day">Sun</div>
+                <div class="date">14</div>
+              </label>
+              <input type="radio" name="date" id="d4" />
+              <label for="d4" class="dates-item">
+                <div class="day">Mon</div>
+                <div class="date">15</div>
+              </label>
+              <input type="radio" name="date" id="d5" />
+              <label for="d5" class="dates-item">
+                <div class="day">Tue</div>
+                <div class="date">16</div>
+              </label>
+              <input type="radio" name="date" id="d6" />
+              <label for="d6" class="dates-item">
+                <div class="day">Wed</div>
+                <div class="date">17</div>
+              </label>
+              <input type="radio" name="date" id="d7" />
+              <label for="d7" class="dates-item">
+                <div class="day">Thu</div>
+                <div class="date">18</div>
+              </label>
+            </div>
+            <div class="times">
+              <input type="radio" name="time" id="t1" checked />
+              <label for="t1" class="time">11:00</label>
+              <input type="radio" name="time" id="t2" />
+              <label for="t2" class="time">14:30</label>
+              <input type="radio" name="time" id="t3" />
+              <label for="t3" class="time">18:00</label>
+              <input type="radio" name="time" id="t4" />
+              <label for="t4" class="time">21:30</label>
             </div>
           </div>
         </div>
-      </section>
-
-      <section id="seat-selection" style="display: none">
-        <h2>Select Your Seats</h2>
-        <div class="movie-details">
-          <p>Movie: Avengers: Endgame</p>
+        <div class="price">
+          <div class="total">
+            <span><span class="count">0</span> Tickets</span>
+            <div>
+              Php
+              <div class="amount">0</div>
+            </div>
+          </div>
+          <button type="button">Book</button>
         </div>
-        <div class="screen">
-          <div class="screen-bar"></div>
-          <div class="seats">
-            <!-- Row A -->
-            <div class="seat" data-seat="A1"></div>
-            <div class="seat" data-seat="A2"></div>
-            <div class="seat" data-seat="A3"></div>
-            <div class="seat" data-seat="A4"></div>
-            <div class="seat" data-seat="A5"></div>
-            <div class="seat" data-seat="A6"></div>
-            <div class="seat" data-seat="A7"></div>
-            <div class="seat" data-seat="A8"></div>
-            <!-- Row B -->
-            <div class="seat" data-seat="B1"></div>
-            <div class="seat" data-seat="B2"></div>
-            <div class="seat" data-seat="B3"></div>
-            <div class="seat" data-seat="B4"></div>
-            <div class="seat" data-seat="B5"></div>
-            <div class="seat" data-seat="B6"></div>
-            <div class="seat" data-seat="B7"></div>
-            <div class="seat" data-seat="B8"></div>
-            <!-- Row C -->
-            <div class="seat" data-seat="C1"></div>
-            <div class="seat" data-seat="C2"></div>
-            <div class="seat" data-seat="C3"></div>
-            <div class="seat" data-seat="C4"></div>
-            <div class="seat" data-seat="C5"></div>
-            <div class="seat" data-seat="C6"></div>
-            <div class="seat" data-seat="C7"></div>
-            <div class="seat" data-seat="C8"></div>
-            <!-- Row D -->
-            <div class="seat" data-seat="D1"></div>
-            <div class="seat" data-seat="D2"></div>
-            <div class="seat" data-seat="D3"></div>
-            <div class="seat" data-seat="D4"></div>
-            <div class="seat" data-seat="D5"></div>
-            <div class="seat" data-seat="D6"></div>
-            <div class="seat" data-seat="D7"></div>
-            <div class="seat" data-seat="D8"></div>
-            <!-- Row E -->
-            <div class="seat" data-seat="E1"></div>
-            <div class="seat" data-seat="E2"></div>
-            <div class="seat" data-seat="E3"></div>
-            <div class="seat" data-seat="E4"></div>
-            <div class="seat" data-seat="E5"></div>
-            <div class="seat" data-seat="E6"></div>
-            <div class="seat" data-seat="E7"></div>
-            <div class="seat" data-seat="E8"></div>
-          </div>
-        </div>
-        <p>Selected: <span id="selected-seats"></span></p>
-        <button id="continue-button">Continue</button>
-      </section>
-
-      <section id="ticket" style="display: none">
-        <h2>Your Ticket</h2>
-        <div class="ticket-details">
-          <div class="detail">
-            <i class="fas fa-film"></i>
-            <div class="movie-title">Avengers: Endgame</div>
-          </div>
-          <div class="detail">
-            <i class="fas fa-dollar-sign"></i>
-            <span class="ticket-price">$15.99</span>
-          </div>
-          <div class="detail">
-            <i class="fas fa-chair"></i>
-            <span class="selected-seats"></span>
-          </div>
-        </div>
-        <button id="print-ticket">Print Ticket</button>
-      </section>
-    </main>
-
-    <script src="/JS/seats.js"></script>
+      </div>
+    </div>
   </body>
 </html>

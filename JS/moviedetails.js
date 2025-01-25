@@ -62,7 +62,7 @@ const movieData = {
     director: 'Chris Columbus',
     starring: 'Macaulay Culkin, Daniel Stern, Joe Pesci, Catherine O’Hara',
     synopsis:
-      "When 8-year-old Kevin McCallister (Macaulay Culkin) acts out the night before a family trip to Paris, his mother makes him sleep in the attic. After the McCallisters mistakenly leave for the airport without Kevin, he awakens to an empty house and assumes his wish to have no family has come true. But his excitement sours when he realizes that two con men (Joe Pesci, Daniel Stern) plan to rob the McCallister residence, and that he alone must protect the family home.",
+      'When 8-year-old Kevin McCallister (Macaulay Culkin) acts out the night before a family trip to Paris, his mother makes him sleep in the attic. After the McCallisters mistakenly leave for the airport without Kevin, he awakens to an empty house and assumes his wish to have no family has come true. But his excitement sours when he realizes that two con men (Joe Pesci, Daniel Stern) plan to rob the McCallister residence, and that he alone must protect the family home.',
     posterUrl: '/img/6.jpg', // This should match the image path from your sample.html
     rating: '4.8',
   },
@@ -73,7 +73,7 @@ const movieData = {
     director: 'Chris Columbus',
     starring: 'Macaulay Culkin, Joe Pesci, Daniel Stern',
     synopsis:
-      "After getting separated from his family at the airport, Kevin McCallister (Macaulay Culkin) accidentally boards a plane to New York City. While staying at the Plaza Hotel, he discovers the Sticky Bandits (Joe Pesci, Daniel Stern) planning to rob a toy store and tries to stop them.",
+      "After snarky youth Kevin McCallister (Macaulay Culkin) loses track of his father at the airport, he mistakenly gets on a plane headed for New York City -- while the rest of the McCallisters fly to Florida. Now alone in the Big Apple, Kevin cons his way into a room at the Plaza Hotel and begins his usual antics. But when Kevin discovers that the Sticky Bandits (Joe Pesci, Daniel Stern) are on the loose, he struggles to stop them from robbing an elderly man's toy store just before Christmas.",
     posterUrl: '/img/7.jpg', // This should match the image path from your sample.html
     rating: '4.8',
   },
@@ -102,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Update the page with movie details
     document.querySelector('.movie-poster').src = movie.posterUrl;
     document.querySelector('.movie-title').textContent = movie.title;
+    localStorage.setItem('selectedMovie', movie.title);
     document.querySelector('.movie-synopsis').textContent = movie.synopsis;
     document.querySelector('.duration').textContent = movie.duration;
     document.querySelector('.genre').textContent = movie.genre;
@@ -116,35 +117,5 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.movie-container').innerHTML =
       '<h2>Movie not found</h2>';
   }
-});
+}); 
 
-// Function to get movie ID from URL
-function getMovieIdFromUrl() {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get('movieId');
-}
-
-// Function to load movie details
-function loadMovieDetails() {
-  const movieId = getMovieIdFromUrl();
-  const movie = movieData[movieId];
-
-  if (movie) {
-    // Update all elements with movie details
-    document.querySelector('.movie-title').textContent = movie.title;
-    document.querySelector('.movie-synopsis').textContent = movie.synopsis;
-    document.querySelector('.duration').textContent = movie.duration;
-    document.querySelector('.genre').textContent = movie.genre;
-    document.querySelector('.director').textContent = movie.director;
-    document.querySelector('.starring').textContent = movie.starring;
-    document.querySelector('.movie-poster').src = movie.posterUrl;
-    document.querySelector('.heart-icon').textContent = `❤️ ${movie.rating}`;
-  } else {
-    console.error('Movie not found');
-  }
-}
-
-// Load movie details when page loads
-document.addEventListener('DOMContentLoaded', () => {
-  loadMovieDetails();
-});

@@ -52,6 +52,3 @@ function renderMovies() {
     });
   });
 }
-
-// Call render function when page loads
-document.addEventListener('DOMContentLoaded', renderMovies);
