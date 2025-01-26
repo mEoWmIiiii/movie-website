@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BoxOffice - Movie Tickets</title>
     <link rel="stylesheet" href="/CSS/main.css" />
+    <title>Movie Booking</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -19,15 +19,21 @@
       </div>
       <div class="search-bar">
         <input type="text" placeholder="Search Movies" id="searchInput" />
-        <button type="submit" id="searchButton" onclick="searchMovies()"><i class="fas fa-search"></i></button>
+        <button type="submit" id="searchButton" onclick="searchMovies()">
+          <i class="fas fa-search"></i>
+        </button>
       </div>
       <script>
         function searchMovies() {
-          const searchInput = document.getElementById('searchInput').value.toLowerCase();
+          const searchInput = document
+            .getElementById('searchInput')
+            .value.toLowerCase();
           const movieCards = document.querySelectorAll('.movie-card');
-          
-          movieCards.forEach(card => {
-            const title = card.querySelector('.movie-title h3').textContent.toLowerCase();
+
+          movieCards.forEach((card) => {
+            const title = card
+              .querySelector('.movie-title h3')
+              .textContent.toLowerCase();
             if (title.includes(searchInput)) {
               card.style.display = 'block';
             } else {
@@ -37,25 +43,23 @@
         }
 
         // Also search when Enter key is pressed
-        document.getElementById('searchInput').addEventListener('keypress', function(e) {
-          if (e.key === 'Enter') {
-            searchMovies();
-          }
-        });
+        document
+          .getElementById('searchInput')
+          .addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+              searchMovies();
+            }
+          });
       </script>
-      <div class="nav-buttons">
-        <button class="sign-up">Sign Up</button>
-        <button class="sign-in">Sign In</button>
-      </div>
     </nav>
 
     <!-- Hero Section -->
     <div class="hero-section">
-      <img src="/img/8.jpg" alt="Featured Movie" />
+      <img src="/img/9.jpg" alt="Featured Movie" />
       <div class="hero-title">
-        <h1>THE DARK KNIGHT RISES</h1>
-        <p>EXPERIENCE IT IN IMAX</p>
-        <p class="release-date">THE LEGEND ENDS JULY 20</p>
+        <h1>Attack on Titan The Movie: The Last Attack</h1>
+        <p>EXPERIENCE IT IN CINEMA</p>
+        <p class="release-date">THE LEGEND ENDS FEBRUARY 2025</p>
       </div>
     </div>
 

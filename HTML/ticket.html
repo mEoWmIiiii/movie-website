@@ -4,21 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Ticket</title>
-    <link rel="stylesheet" href="/CSS/sample.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="../CSS/ticket.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
     />
   </head>
   <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fas fa-film"></i>
+        <span>Movie Booking</span>
+      </div>
+    </nav>
     <div class="container ticket-container">
       <div class="ticket">
         <div class="ticket-header">
-          <h1>Cinema Ticket</h1>
+          <h1>Movie Ticket</h1>
           <p class="ticket-number" id="ticketNumber"></p>
         </div>
         <div class="ticket-details">
@@ -36,21 +39,32 @@
           </div>
           <div class="ticket-user-details">
             <h3>Personal Details</h3>
-            <form id="userDetailsForm">
-              <input type="text" placeholder="Full Name" required />
-              <input type="email" placeholder="Email" required />
-              <input type="tel" placeholder="Phone Number" required />
+            <form id="userDetailsForm" onsubmit="handleFormSubmit(event)">
+              <input
+                type="text"
+                id="fullName"
+                placeholder="Full Name"
+                required
+              />
+              <input type="email" id="email" placeholder="Email" required />
+              <input
+                type="tel"
+                id="phone"
+                placeholder="Phone Number"
+                required
+              />
+              <button type="submit" class="book-button">Confirm Booking</button>
             </form>
           </div>
         </div>
         <div class="ticket-footer">
-          <p>Thank you for booking with CinemaTickets!</p>
+          <p>Thank you for booking with Movie Booking!</p>
           <button id="printTicket">Print Ticket</button>
         </div>
       </div>
     </div>
 
-    <script src="/JS/sample.js"></script>
-    <script src="/JS/ticket.js"></script>
+    <script src="../JS/movieDatabase.js"></script>
+    <script src="../JS/ticket.js"></script>
   </body>
 </html>

@@ -1,35 +1,42 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const selectedMovieId = localStorage.getItem('selectedMovieId');
-  const selectedShowtime = localStorage.getItem('selectedShowtime');
-  const selectedSeatsRaw = localStorage.getItem('selectedSeats');
+// Get data from URL parameters
+window.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search);
 
-  const movieTitleEl = document.getElementById('movieTitle');
-  const showtimeEl = document.getElementById('movieShowtime');
-  const seatsEl = document.getElementById('selectedSeats');
-  const totalPriceEl = document.getElementById('totalPrice');
-  const ticketNumberEl = document.getElementById('ticketNumber');
+  // Populate ticket details from URL parameters
+  document.getElementById('movieTitle').textContent =
+    urlParams.get('movie') || 'Movie Title';
+  document.getElementById('movieShowtime').textContent = `${
+    urlParams.get('date') || 'Date'
+  } ${urlParams.get('time') || 'Time'}`;
+  document.getElementById('selectedSeats').textContent =
+    urlParams.get('seats') || 'Selected Seats';
+  document.getElementById('totalPrice').textContent = `$${
+    urlParams.get('price') || '0'
+  }`;
+  document.getElementById('ticketNumber').textContent = `Ticket #${Math.random()
+    .toString(36)
+    .substr(2, 9)}`;
+});
 
-  // Find selected movie
-  const selectedMovie = movies.find((m) => m.id == selectedMovieId);
+// Handle form submission
+function handleFormSubmit(event) {
+  event.preventDefault();
 
-  // Parse selected seats
-  const selectedSeats = JSON.parse(selectedSeatsRaw);
+  const formData = {
+    fullName: document.getElementById('fullName').value,
+    email: document.getElementById('email').value,
+    phone: document.getElementById('phone').value,
+    // Add other ticket details as needed
+  };
 
-  // Set ticket details
-  movieTitleEl.textContent = selectedMovie.title;
-  showtimeEl.textContent = selectedShowtime;
-  seatsEl.textContent = selectedSeats.join(', ');
+  // Here you can add code to send the booking data to your backend
+  console.log('Booking confirmed:', formData);
 
-  // Calculate total price
-  const totalPrice = (selectedSeats.length * selectedMovie.price).toFixed(2);
-  totalPriceEl.textContent = `$${totalPrice}`;
+  // You can redirect to a confirmation page or show a success message
+  alert('Booking confirmed! Your ticket has been generated.');
+}
 
-  // Generate ticket number
-  const ticketNumber = `CIN${Math.floor(Math.random() * 1000000)}`;
-  ticketNumberEl.textContent = ticketNumber;
-
-  // Print ticket functionality
-  document.getElementById('printTicket').addEventListener('click', () => {
-    window.print();
-  });
+// Handle print ticket button
+document.getElementById('printTicket').addEventListener('click', () => {
+  window.print();
 });

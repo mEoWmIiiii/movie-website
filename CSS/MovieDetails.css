@@ -183,7 +183,7 @@ body {
 }
 
 .movie-details-container {
-  height: calc(100vh - 70px);
+  height: calc(100vh - 0px);
 }
 
 .movie-backdrop {
