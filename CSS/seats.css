@@ -50,7 +50,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, #ffffff, #625c5c);
+  background: linear-gradient(to right, #2d2d2d, #1b1b1b);
 }
 
 .tickets {
